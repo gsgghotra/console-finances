@@ -93,6 +93,9 @@ var total = 0;
 //Variables to hold total of finance chaneges and array to monthly store changes
 var totalChange = 0, monthlyChange = [];
 
+// Variable to store greatest change
+var maxProfit = 0;
+
 // For loop to access indivisual item
 for(var i = 0; i < finances.length; i++){
 
@@ -107,11 +110,17 @@ for(var i = 0; i < finances.length; i++){
     //Start Calculting the total of Finance Chages as well
     totalChange += finances[i][1] - finances[i-1][1];
   
-    //For loop ends here
+    //Find the max profit
+    if (finances[i-1][1] < finances[i][1]){
+
+    }
+
+    
   }
-
-
+  //For loop ends here
 }
+//Find index of Biggest Increase in Profit/Loss
+maxProfit =  monthlyChange.indexOf(Math.max(...monthlyChange));
 
 //Console Log the results
 console.log("Financial Analysis");
@@ -119,5 +128,5 @@ console.log("------------------");
 console.log("Total Months: " + finances.length);
 console.log("Total: $" + total);
 console.log("Average Change: "+ (totalChange / monthlyChange.length).toFixed(2)); 
-console.log("Greatest Increase in Profits/Losses: " + Math.max(...monthlyChange));
+console.log("Greatest Increase in Profits/Losses: " + finances[maxProfit+1][0] + " (" + monthlyChange[maxProfit] +")");
 console.log("Greatest Decresae in Profits/Losses: " + Math.min(...monthlyChange));

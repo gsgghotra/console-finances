@@ -111,8 +111,13 @@ When you open your code in the browser your resulting analysis should look simil
 
 
 */
+
+// Variables 
 var total = 0;
-var totalChange = 0, averageChange = [];
+
+
+//Variables to hold total of finance chaneges and array to monthly store changes
+var totalChange = 0, monthlyChange = [];
 
 // For loop to access indivisual item
 for(var i = 0; i < finances.length; i++){
@@ -122,7 +127,8 @@ for(var i = 0; i < finances.length; i++){
 
   //find the average - Create a list of changes
   if (i > 0){
-    averageChange.push(finances[i][1] - finances[i-1][1]);
+    //Add monthlty changes to monthly Change Array
+    monthlyChange.push(finances[i][1] - finances[i-1][1]);
 
     //Start Calculting the total of Finance Chages as well
     totalChange += finances[i][1] - finances[i-1][1];
@@ -135,6 +141,6 @@ console.log("Financial Analysis");
 console.log("------------------");
 console.log("Total Months: " + finances.length);
 console.log("Total: $" + total);
-console.log("Average Change: "+ (totalChange / averageChange.length).toFixed(2)); 
-console.log("Greatest Increase in Profits/Losses: " + Math.max(...averageChange));
-console.log("Greatest Decresae in Profits/Losses: " + Math.min(...averageChange));
+console.log("Average Change: "+ (totalChange / monthlyChange.length).toFixed(2)); 
+console.log("Greatest Increase in Profits/Losses: " + Math.max(...monthlyChange));
+console.log("Greatest Decresae in Profits/Losses: " + Math.min(...monthlyChange));

@@ -1,7 +1,7 @@
 # Console-Finances
 Analyzing the financial records of a company. 
 
-- **Visit** the deployed webapp at : 
+- **Visit** the deployed webapp at : https://gsgghotra.github.io/console-finances/
 
 
 ## Table of Contents
